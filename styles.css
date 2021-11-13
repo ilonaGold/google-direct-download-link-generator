@@ -152,7 +152,7 @@ main nav label i {
 nav .slide {
   position: absolute;
   top: 0;
-  left: 2%;
+  left: 5%;
   width: 28%;
   height: 100%;
   background-color: var(--color-primary);
@@ -162,11 +162,11 @@ nav .slide {
 }
 
 #register:checked ~ nav .slide {
-  left: 31%;
+  left: 34%;
 }
 
 #reset:checked ~ nav .slide {
-  left: 66%;
+  left: 67%;
 }
 
 #login:checked ~ nav label.login,
