@@ -19,6 +19,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+  height: 100%;
 }
 
 img {
@@ -30,7 +31,7 @@ img {
 main h1,
 .instructions h2,
 .content > i {
-  font-size: 2.25rem;
+  font-size: 1.5rem;
 }
 
 .content h2 {
@@ -43,6 +44,10 @@ main h1,
 
 ::placeholder {
   font-size: 0.9rem;
+}
+
+main nav {
+  font-size: 0.7rem;
 }
 
 main label {
@@ -65,17 +70,15 @@ main h1,
 
 .main-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
 /* Instructions Section */
 
 .instructions {
-  width: 30%;
-  height: 100vh;
   background-color: var(--black);
   color: var(--grey);
-  padding-top: 2.5em;
+  padding: 2em 0.75em;
 }
 
 .instructions h2 {
@@ -89,7 +92,7 @@ main h1,
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 25%;
+  width: 15%;
   height: 2px;
   background-color: var(--grey);
 }
@@ -106,8 +109,7 @@ main h1,
 /* Download Section */
 
 .download-link {
-  width: 70%;
-  padding-top: 2.5em;
+  padding-top: 1.5em;
 }
 
 .download-link section {
@@ -119,7 +121,7 @@ main h1 {
   display: block;
   text-align: center;
   color: var(--color-primary);
-  margin-bottom: 0.7em;
+  margin-bottom: 0.2em;
 }
 
 main input[type="radio"] {
@@ -152,7 +154,7 @@ main nav label i {
 nav .slide {
   position: absolute;
   top: 0;
-  left: 5%;
+  left: 0;
   width: 28%;
   height: 100%;
   background-color: var(--color-primary);
@@ -162,11 +164,13 @@ nav .slide {
 }
 
 #register:checked ~ nav .slide {
-  left: 34%;
+  left: 28%;
+  width: 31%;
 }
 
 #reset:checked ~ nav .slide {
-  left: 67%;
+  left: 58%;
+  width: 42.5%;
 }
 
 #login:checked ~ nav label.login,
@@ -188,7 +192,7 @@ nav .slide {
 /* FORM STYLES */
 
 section .content {
-  margin: 3em auto;
+  margin: 1em auto;
   text-align: center;
 }
 
@@ -311,5 +315,60 @@ section .content {
 }
 
 .embed-code span:hover {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
+}
+
+/* Media Queries */
+
+@media (min-width: 600px) {
+  #login:checked ~ nav .slide {
+    width: 32%;
+  }
+  #register:checked ~ nav .slide {
+    left: 31%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .instructions {
+    width: 30%;
+    height: 100vh;
+    padding: 2.5em 0 0;
+  }
+  .instructions h2::after {
+    width: 25%;
+  }
+  .download-link {
+    width: 70%;
+    padding-top: 2.5em;
+  }
+  main h1,
+  .instructions h2,
+  .content > i {
+    font-size: 2.25rem;
+  }
+  main nav {
+    font-size: 1rem;
+  }
+  nav .slide {
+    left: 5%;
+  }
+  #login:checked ~ nav .slide {
+    width: 25%;
+  }
+  #register:checked ~ nav .slide {
+    left: 34%;
+    width: 28%;
+  }
+  #reset:checked ~ nav .slide {
+    left: 67%;
+    width: 28%;
+  }
+  section .content {
+    margin: 3em auto;
+  }
 }
